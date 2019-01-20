@@ -7,11 +7,17 @@ public class UserVO {
     private int IDX;
     private String ID;
     private String EMAIL;
-    private String MAME;
+    private String NAME;
     private String PASSWORD;
     private int GRADE;
     private Date REGDATE;
     
+    //비밀번호 확인
+    public boolean matchPassword(String pw) {
+        return this.PASSWORD.equals(pw);
+    }
+
+
     public int getIDX() {
         return IDX;
     }
@@ -30,11 +36,11 @@ public class UserVO {
     public void setEMAIL(String eMAIL) {
         EMAIL = eMAIL;
     }
-    public String getMAME() {
-        return MAME;
+    public String getNAME() {
+        return NAME;
     }
-    public void setMAME(String mAME) {
-        MAME = mAME;
+    public void setMAME(String nAME) {
+        NAME = nAME;
     }
     public String getPASSWORD() {
         return PASSWORD;
