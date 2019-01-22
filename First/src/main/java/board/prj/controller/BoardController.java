@@ -46,7 +46,15 @@ public class BoardController {
         return mav;
     }
 
-	
-	
+    @RequestMapping(value="/board/boardDetail")
+    public ModelAndView boardDetail(CommandMap commandMap) throws Exception {
+        
+        ModelAndView mv = new ModelAndView("/board/boardDetail");
+        Map<String, Object> detail = boardServcie.viewBoardDetail(commandMap.getMap());
+        mv.addObject("detail",detail);
+        
+        return mv;
+    }
+
 	
 }

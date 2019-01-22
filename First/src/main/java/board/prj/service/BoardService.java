@@ -10,5 +10,7 @@ public interface BoardService {
     List<Map<String, Object>> selectBoardList(CommandMap commandMap);
 
 	void insertBoard(CommandMap commandMap);
+
+	Map<String, Object> viewBoardDetail(Map<String, Object> map);
  
 }
