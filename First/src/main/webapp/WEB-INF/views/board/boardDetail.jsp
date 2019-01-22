@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script
@@ -11,33 +10,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>Insert title here</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
 </head>
+
 <body>
 	<div class="container col-md-6">
 		<div class="card">
 			<div class="card-body">
 				<h4 class="card-title mb-3">${detail.TITLE }</h4>
 				<h6 class="card-subtitle text-muted mb-4">
-					<i class="far fa-user"></i> ${detail.CREA_ID } · <i
-						class="far fa-clock"></i> ${detail.CREA_DATE } · <i
+					<i class="far fa-user"></i> ${detail.CREA_ID } 路 <i
+						class="far fa-clock"></i> ${detail.CREA_DATE } 路 <i
 						class="fas fa-align-justify"></i> ${detail.HIT_CNT }
 				</h6>
 				<p class="card-text">${detail.CONTENTS }</p>
 			</div>
 			<div class="card-body">
-				<a href="#" class="btn btn-outline-secondary btn-sm" role="button">荐沥</a>
-				<a href="#" class="btn btn-outline-secondary btn-sm " role="button">昏力</a>
+				<a href='<c:url value='/board/boardUpdate?idx=${detail.IDX }'/>' class="btn btn-outline-secondary btn-sm" role="button">靾橃爼</a>
+				<a href='<c:url value='/board/boardDelete?idx=${detail.IDX }'/>' class="btn btn-outline-secondary btn-sm" role="button">靷牅</a>
 			</div>
 			<div class="card-body">
 
 
 				<a href='<c:url value='/board/boardList'/>' class="btn btn-info"
-					role="button">格废栏肺</a>
+					role="button">氇╇鞙茧</a>
 
 			</div>
 		</div>

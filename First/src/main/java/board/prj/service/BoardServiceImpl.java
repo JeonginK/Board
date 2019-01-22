@@ -39,6 +39,24 @@ public class BoardServiceImpl implements BoardService {
        return detail;
    }
 
+   @Override
+   public Map<String, Object> selectBoardDetail(Map<String, Object> map) {
+       // TODO Auto-generated method stub
+       return boardDAO.detailBoard(map);
+   }
+
+   @Override
+   public void updateBoard(Map<String, Object> map) {
+       // TODO Auto-generated method stub
+       boardDAO.updateBoard(map);
+   }
+
+   @Override
+   public void deleteBoard(Map<String, Object> map) {
+       // TODO Auto-generated method stub
+       boardDAO.deleteBoard(map);
+   }
+
 
 
 }

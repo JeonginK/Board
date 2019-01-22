@@ -42,7 +42,7 @@
         ]]>
 	</insert>
 
- <select id="detailBoard" resultType="hashmap">
+	<select id="detailBoard" resultType="hashmap">
         <![CDATA[
             SELECT
                 IDX,
@@ -60,9 +60,9 @@
             WHERE
                 IDX = #{ idx}
         ]]>
-    </select>
-    
-    <update id="updateHitBoard">
+	</select>
+
+	<update id="updateHitBoard">
         <![CDATA[
             UPDATE
                 one_BOARD
@@ -71,7 +71,36 @@
             WHERE
                 IDX = #{ idx}
         ]]>
-    </update>
+	</update>
+
+	<update id="updateBoard" parameterType="hashmap">
+        <![CDATA[
+            UPDATE
+                one_BOARD
+            SET
+                TITLE = #{ TITLE},
+                CONTENTS = #{ CONTENTS}
+            WHERE
+                IDX = #{ IDX}
+                and
+                CREA_ID = #{ CREA_ID}
+        ]]>
+	</update>
+
+	<update id="deleteBoard">
+        <![CDATA[
+            UPDATE
+                one_BOARD
+            SET
+                DEL_CHK = 'Y'
+            WHERE
+                IDX = #{ idx}
+        ]]>
+	</update>
+
+
 
 </mapper>
+
+
 

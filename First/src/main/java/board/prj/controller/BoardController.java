@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import board.prj.common.common.CommandMap;
@@ -56,5 +57,32 @@ public class BoardController {
         return mv;
     }
 
-	
+    @RequestMapping(value="/board/boardUpdate")
+    public ModelAndView boardUpdate(CommandMap commandMap) throws Exception {
+        
+        ModelAndView mv = new ModelAndView("/board/boardUpdate");
+        Map<String, Object> detail = boardServcie.selectBoardDetail(commandMap.getMap());
+        mv.addObject("detail",detail);
+        return mv;
+    }
+    
+    @RequestMapping(value="/board/boardUpdate", method=RequestMethod.POST)
+    public ModelAndView boardUpdatePOST(CommandMap commandMap) throws Exception {
+        
+        ModelAndView mv = new ModelAndView("redirect:/board/boardDetail");
+        mv.addObject("idx", commandMap.get("IDX"));
+        boardServcie.updateBoard(commandMap.getMap());
+        return mv;
+    }
+
+    @RequestMapping(value="/board/boardDelete")
+    public ModelAndView boardDelete(CommandMap commandMap) throws Exception {
+        ModelAndView mv = new ModelAndView("redirect:/board/boardList");
+        log.debug(commandMap.getMap());
+        boardServcie.deleteBoard(commandMap.getMap());
+        return mv;
+    }
+
+
+    
 }

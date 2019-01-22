@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
 
 
 
@@ -12,7 +11,7 @@
 <body>
 
  <div class=>
-        ÃàÇÏµå¸³´Ï´Ù, ¼º°øÀûÀ¸·Î È¸¿ø°¡ÀÔÀÌ µÇ¾ú½À´Ï´Ù!
+        ì¶•í•˜ë“œë¦½ë‹ˆë‹¤, ì„±ê³µì ìœ¼ë¡œ íšŒì›ê°€ìž…ì´ ë˜ì—ˆìŠµë‹ˆë‹¤!
     </div>
 
 </body>

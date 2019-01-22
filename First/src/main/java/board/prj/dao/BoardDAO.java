@@ -33,5 +33,16 @@ public class BoardDAO extends AbstractDAO {
 		// TODO Auto-generated method stub
 		update("board.updateHitBoard", map);
 	}
+	
+	public void updateBoard(Map<String, Object> map) {
+        // TODO Auto-generated method stub
+        update("board.updateBoard",map);
+    }
+
+	public void deleteBoard(Map<String, Object> map) {
+        // TODO Auto-generated method stub
+        update("board.deleteBoard", map);
+    }
+
 
 }

@@ -12,5 +12,11 @@ public interface BoardService {
 	void insertBoard(CommandMap commandMap);
 
 	Map<String, Object> viewBoardDetail(Map<String, Object> map);
+
+	Map<String, Object> selectBoardDetail(Map<String, Object> map);
+
+	void updateBoard(Map<String, Object> map);
+
+	void deleteBoard(Map<String, Object> map);
  
 }
