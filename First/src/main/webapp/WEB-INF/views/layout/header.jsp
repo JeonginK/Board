@@ -2,35 +2,23 @@
 	pageEncoding="UTF-8"%>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
-
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-</head>
-<body>
-<%
-	//response.sendRedirect("/login");
-
-%>
-	
-
-
-	<div id="content">
-		<div class="panel panel-default">
-			<div class="panel-body">Basic panel example</div>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+          
+      <li><a href='<c:url value='/board/boardList'/>'> BOARD </a></li>
+   
+  
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+      
+      
+      
 			<c:catch>
 				<c:choose>
 					<c:when test="${empty authInfo }">
@@ -58,13 +46,12 @@
 					</c:otherwise>
 				</c:choose>
 			</c:catch>
-
-
-		</div>
-	</div>
-
-
-</body>
-</html>
-
-
+      
+      
+      
+      
+      
+      
+    </ul>
+  </div>
+</nav>

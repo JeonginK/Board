@@ -33,6 +33,8 @@ public class BoardController {
 		return mav;
 
 	}
+	
+
 
 	@RequestMapping(value = "/board/boardWrite")
 	public String boardWrite() throws Exception {

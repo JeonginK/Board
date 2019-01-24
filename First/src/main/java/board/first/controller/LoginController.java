@@ -49,12 +49,12 @@ public class LoginController {
 			response.addCookie(rememberCookie);
 
 		} catch (IdPasswordNotMatchingException e) {
-			bindingResult.rejectValue("pw", "notMatch", "¾ÆÀÌµð¿Í ºñ¹Ð¹øÈ£°¡ ¸ÂÁö¾Ê½À´Ï´Ù.");
+			bindingResult.rejectValue("pw", "notMatch", "ï¿½ï¿½ï¿½Ìµï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
 			ModelAndView mv = new ModelAndView("user/login/loginForm");
 			return mv;
 		}
 
-		ModelAndView mv = new ModelAndView("redirect:/");
+		ModelAndView mv = new ModelAndView("redirect:/board/boardList");
 		return mv;
 	}
 	

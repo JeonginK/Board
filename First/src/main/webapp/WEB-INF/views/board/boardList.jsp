@@ -18,6 +18,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 </head>
 <body>
+<div id="content">
 	<div class="container">
 		<table class="table">
 			<tbody>
@@ -51,6 +52,7 @@
 
 	<a href='<c:url value='/board/boardDetail?idx=${bList.IDX }'/>'
 		class="text-dark">${bList.TITLE }</a>
+</div>
 
 </body>
 </html>
