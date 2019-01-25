@@ -21,7 +21,7 @@
 </head>
 <body>
 <%
-	//response.sendRedirect("/login");
+	response.sendRedirect("/board/boardList");
 
 %>
 	

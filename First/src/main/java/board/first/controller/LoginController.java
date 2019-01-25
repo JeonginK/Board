@@ -54,7 +54,7 @@ public class LoginController {
 			return mv;
 		}
 
-		ModelAndView mv = new ModelAndView("redirect:/board/boardList");
+		ModelAndView mv = new ModelAndView("/board/boardList");
 		return mv;
 	}
 	

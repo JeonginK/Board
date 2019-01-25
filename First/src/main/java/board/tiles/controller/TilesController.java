@@ -18,12 +18,7 @@ public class TilesController {
 	public class MainController {
 		@RequestMapping(value = "/", method = RequestMethod.GET)
 		public String main() {
-			return "user/login/loginForm";
-		}
-
-		@RequestMapping(value = "/login", method = RequestMethod.GET)
-		public String login() {
-			return "login";
+			return "*";
 
 		}
 	}

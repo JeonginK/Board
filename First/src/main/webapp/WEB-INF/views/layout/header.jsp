@@ -12,46 +12,9 @@
     <ul class="nav navbar-nav">
           
       <li><a href='<c:url value='/board/boardList'/>'> BOARD </a></li>
+      
+    
    
-  
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-      
-      
-      
-			<c:catch>
-				<c:choose>
-					<c:when test="${empty authInfo }">
-						<li><a href="/login"><i class="fa fa-sign-in"></i> 로그인</a></li>
-						<li><a href="/register/step1"><i class="fa fa-user"></i>
-								회원가입</a></li>
-					</c:when>
-					<c:otherwise>
-						<c:choose>
-							<c:when test="${authInfo.grade eq '1' }">
-								<li>
-									<p>관리자 ${authInfo.name }님, 환영합니다.</p>
-								</li>
-								<li><a href="/logout"><i class="fa fa-sign-out"></i>
-										로그아웃</a></li>
-							</c:when>
-							<c:otherwise>
-								<li>
-									<p>${authInfo.name }님,반갑습니다!</p>
-								</li>
-								<li><a href="/logout"><i class="fa fa-sign-out"></i>
-										로그아웃</a></li>
-							</c:otherwise>
-						</c:choose>
-					</c:otherwise>
-				</c:choose>
-			</c:catch>
-      
-      
-      
-      
-      
-      
     </ul>
   </div>
 </nav>
