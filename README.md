@@ -1,6 +1,5 @@
 # Board
-
-게시판 
+SpringFramework를 이용한 게시판 
 
 # 개발환경
 - Spring Framework 4.3.4
@@ -10,3 +9,5 @@
   target 1.8
 - servlet-api 3.0.1
 - jsp-api 2.2
+- MySql 5.7.24
+
