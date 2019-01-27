@@ -3,16 +3,28 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
+
+
+	<div class="container-fluid">
+
+		<p>
+			<a href="#">Link</a>
+		</p>
+		<p>
+			<a href="#">Link</a>
+		</p>
+		<p>
+			<a href="#">Link</a>
+		</p>
+	</div>
+
+
+
+	<!--  
     <ul class="nav navbar-nav">
           
-      <li><a href='<c:url value='/board/boardList'/>'> BOARD </a></li>
+      <li><a href='<c:url value='/board/boardList'/>'> 123123 </a></li>
       
-
 			<c:catch>
 				<c:choose>
 					<c:when test="${empty authInfo }">
@@ -45,4 +57,4 @@
       
     </ul>
   </div>
-</nav>
+</nav>-->

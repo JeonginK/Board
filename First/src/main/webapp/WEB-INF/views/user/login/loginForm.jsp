@@ -21,7 +21,7 @@
 
 <body>
 
-	<div class="panel panel-default">
+	<div class="panel panel-default" style="width: 300px;" >
 		<div class="panel-heading" style="text-align:center" >
 			·Î±×ÀÎ
 			</div>
