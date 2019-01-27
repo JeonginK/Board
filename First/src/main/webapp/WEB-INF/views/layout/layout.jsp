@@ -30,7 +30,7 @@
 .sidenav {
 	padding-top: 20px;
 	background-color: #f1f1f1;
-	height: 100%;
+	height: 800px;
 }
 
 /* Set black background color, white text and some padding */
@@ -46,6 +46,10 @@
 	}
 }
 
+ #box {
+            padding:30px;
+        
+        }
 
 </style>
 </head>
@@ -55,17 +59,22 @@
 
 	<div class="container-fluid text-center">
 		<div class="row content">
-			<div class="col-sm-2 sidenav">
+			<div class="col-sm-2 sidenav" id= "box">
 				<t:insertAttribute name="left" />
 			</div>
 
-			<div class="col-sm-10 text-left">
-				<div class="container">
+			<div class="col-sm-8 text-left" >
+				<div class="container " id= "box">
 					<t:insertAttribute name="content" />
 				</div>
 			</div>
+			
+		
 		</div>
 	</div>
+
+
+
 
 	<footer class="container-fluid text-center">
 		<t:insertAttribute name="footer" />

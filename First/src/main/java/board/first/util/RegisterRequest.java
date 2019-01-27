@@ -10,32 +10,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class RegisterRequest {
 
-	@Column
-	@NotEmpty(message = "ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.")
-	@Email(message = "ÀÌ¸ŞÀÏ Çü½Ä¿¡ ¸ÂÃç ¿Ã¹Ù¸£°Ô ÀÔ·ÂÇØÁÖ¼¼¿ä.")
+	
 	private String email;
+    private String id;
+    private String name;
+    private String pw;
+    private String checkPw;
 
-	@Column
-	// @NotEmpty(message="¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.")
-	@Pattern(regexp = "\\w{4,8}", message = "¾ÆÀÌµğ¸¦ 4~8ÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.")
-	private String id;
-
-	@Column
-	// @NotEmpty(message="ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä.")
-	@Pattern(regexp = "\\S{2,8}", message = "ÀÌ¸§À» °ø¹é¾øÀÌ 2~6ÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.")
-	private String name;
-
-	@Column
-	// @NotEmpty(message="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.")
-	@Size(min = 4, max = 12, message = "ºñ¹Ğ¹øÈ£¸¦ 4~12ÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.")
-	private String pw;
-
-	@Column
-	// @NotEmpty(message="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.")
-	@Size(min = 4, max = 12, message = "ºñ¹Ğ¹øÈ£¸¦ 4~12ÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.")
-	private String checkPw;
-
-	// ºñ¹Ğ¹øÈ£ È®ÀÎ
 
 	 public boolean isPwEqualToCheckPw() {
 	        return pw.equals(checkPw);
@@ -81,4 +62,32 @@ public class RegisterRequest {
 		this.checkPw = checkPw;
 	}
 
+	/*
+	@Column
+	@NotEmpty(message ="ì´ë©”ì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.")
+	@Email(message = "ì´ë©”ì¼ í˜•ì‹ì— ë§ì¶° ì˜¬ë°”ë¥´ê²Œ ì…ë ¥í•´ì£¼ì„¸ìš”.")
+	private String email;
+
+	@Column
+	// @NotEmpty(message="ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.")
+	@Pattern(regexp = "\\w{4,8}", message = "ì•„ì´ë””ë¥¼ 4~8ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.")
+	private String id;
+
+	@Column
+	// @NotEmpty(message="ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.")
+	@Pattern(regexp = "\\S{2,8}", message ="ì´ë¦„ì„ ê³µë°±ì—†ì´ 2~6ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.")
+	private String name;
+
+	@Column
+	// @NotEmpty(message="ï¿½ï¿½Ğ¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.")
+	@Size(min = 4, max = 12, message = "ë¹„ë°€ë²ˆí˜¸ë¥¼ 4~12ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.")
+	private String pw;
+
+	@Column
+	// @NotEmpty(message="ï¿½ï¿½Ğ¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.")
+	@Size(min = 4, max = 12, message = "ë¹„ë°€ë²ˆí˜¸ë¥¼ 4~12ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.")
+	private String checkPw;
+
+*/
+	
 }

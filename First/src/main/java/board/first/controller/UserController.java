@@ -39,19 +39,43 @@ public class UserController {
 	@Resource(name = "userService")
 	private UserService userSer;
 
+	 @RequestMapping("/register/step3")
+	    public ModelAndView step3(RegisterRequest regReq, Errors errors) throws Exception{
+	        new RegisterRequestValidator().validate(regReq, errors);
+	        if(errors.hasErrors()) {
+	            ModelAndView mv = new ModelAndView("user/register/step2");
+	            return mv;
+	        }
+	        try {
+	            userSer.register(regReq);
+	        } catch (AlreadyExistingEmailException e) {
+	            errors.rejectValue("email", "duplicate", "ì´ë¯¸ ê°€ì…ëœ ì´ë©”ì¼ì…ë‹ˆë‹¤.");
+	            ModelAndView mv = new ModelAndView("user/register/step2");
+	            return mv;
+	        } catch (AlreadyExistingIdException e) {
+	            errors.rejectValue("id", "duplicate", "ì´ë¯¸ ê°€ì…ëœ ì•„ì´ë””ì…ë‹ˆë‹¤.");
+	            ModelAndView mv = new ModelAndView("user/register/step2");
+	            return mv;
+	        }
+	        ModelAndView mv = new ModelAndView("user/register/step3");
+	        return mv;
+	    }
+
+}
+	
+	
+	/*
 	@RequestMapping("/register/step3")
 	ModelAndView step3(@Valid RegisterRequest regReq, BindingResult bindingResult) throws Exception {
-
-		// @Valid °ËÁõ
 		if (bindingResult.hasErrors()) {
 			ModelAndView mv = new ModelAndView("user/register/step2");
 			return mv;
 		}
 
-		// ºñ¹Ğ¹øÈ£ È®ÀÎ
+		
 		boolean check = regReq.isPwEqualToCheckPw();
 		if (!check) {
-			bindingResult.rejectValue("checkPw", "noMatch", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
+			bindingResult.rejectValue("checkPw", "noMatch", "ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
 			ModelAndView mv = new ModelAndView("user/register/step2");
 			return mv;
 		}
@@ -59,16 +83,17 @@ public class UserController {
 		try {
 			userSer.register(regReq);
 		} catch (AlreadyExistingEmailException e) {
-			bindingResult.rejectValue("email", "duplicate", "ÀÌ¹Ì °¡ÀÔµÈ ÀÌ¸ŞÀÏÀÔ´Ï´Ù.");
+			bindingResult.rejectValue("email", "duplicate", "ì´ë¯¸ ê°€ì…ëœ ì´ë©”ì¼ì…ë‹ˆë‹¤.");
 			ModelAndView mv = new ModelAndView("user/register/step2");
 			return mv;
 		} catch (AlreadyExistingIdException e) {
-			bindingResult.rejectValue("id", "duplicate", "ÀÌ¹Ì °¡ÀÔµÈ ¾ÆÀÌµğÀÔ´Ï´Ù.");
+			bindingResult.rejectValue("id", "duplicate", "ì´ë¯¸ ê°€ì…ëœ ì•„ì´ë””ì…ë‹ˆë‹¤.");
 			ModelAndView mv = new ModelAndView("user/register/step2");
 			return mv;
 		}
 
 		ModelAndView mv = new ModelAndView("user/register/step3");
 		return mv;
-	}
-}
+		}
+*/	
+

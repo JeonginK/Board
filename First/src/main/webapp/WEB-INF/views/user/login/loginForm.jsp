@@ -12,15 +12,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="EUC-KR">
-
-
 <title>Insert title here</title>
 </head>
 
 <body>
-
 	<div class="panel panel-default" style="width: 300px;" >
 		<div class="panel-heading" style="text-align:center" >
 			로그인
