@@ -31,17 +31,13 @@ public class BoardController {
 		mav.addObject("list", list);
 
 		return mav;
-
 	}
 	
-
-
 	@RequestMapping(value = "/board/boardWrite")
 	public String boardWrite() throws Exception {
 		return "/board/boardWrite";
 	}
 
-	
     @RequestMapping(value="/board/boardInsert")
     public ModelAndView boardInsert(CommandMap commandMap) throws Exception {
         ModelAndView mav = new ModelAndView("redirect:/board/boardList");

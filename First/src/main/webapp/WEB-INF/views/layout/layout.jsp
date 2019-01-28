@@ -64,22 +64,17 @@
 			</div>
 
 			<div class="col-sm-8 text-left" >
-				<div class="container " id= "box">
+				<div class="container" id= "box">
 					<t:insertAttribute name="content" />
 				</div>
 			</div>
 			
-		
 		</div>
 	</div>
-
-
-
 
 	<footer class="container-fluid text-center">
 		<t:insertAttribute name="footer" />
 	</footer>
-
 
 </body>
 </html>

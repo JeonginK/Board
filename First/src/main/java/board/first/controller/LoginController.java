@@ -49,7 +49,7 @@ public class LoginController {
 			response.addCookie(rememberCookie);
 
 		} catch (IdPasswordNotMatchingException e) {
-			bindingResult.rejectValue("pw", "notMatch", "���̵�� ��й�ȣ�� �����ʽ��ϴ�.");
+			bindingResult.rejectValue("pw", "notMatch", "아이디와 비밀번호가 맞지않습니다.");
 			ModelAndView mv = new ModelAndView("user/login/loginForm");
 			return mv;
 		}
@@ -64,7 +64,5 @@ public class LoginController {
         ModelAndView mv = new ModelAndView("redirect:/");
         return mv;
     }
-
-
 
 }

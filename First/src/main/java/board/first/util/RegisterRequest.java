@@ -10,7 +10,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class RegisterRequest {
 
-	
 	private String email;
     private String id;
     private String name;

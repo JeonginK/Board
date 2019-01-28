@@ -1,6 +1,5 @@
 package board.first.util;
 
-//회원 정보 세션 유지
 public class AuthInfo {
   
   private String id;

@@ -9,7 +9,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<div class="panel panel-default" style="width: 400px;">
+<div class="panel panel-default">
 	<div class="panel-heading">회원가입</div>
 	<div class="panel-body">
 		<div class="row">
