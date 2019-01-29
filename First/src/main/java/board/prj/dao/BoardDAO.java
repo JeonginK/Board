@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import board.first.common.dao.AbstractDAO;
 import board.prj.common.common.CommandMap;
+import board.prj.page.Criteria;
 
 @Repository("boardDAO")
 public class BoardDAO extends AbstractDAO {
@@ -43,6 +44,16 @@ public class BoardDAO extends AbstractDAO {
         // TODO Auto-generated method stub
         update("board.deleteBoard", map);
     }
+
+	@SuppressWarnings("unchecked")
+	public List<Map<String, Object>> selectBoardList(Criteria cri) {
+	    return (List<Map<String,Object>>)selectList("board.selectBoardList", cri);
+	}
+	
+	public int countBoardList(){
+	    return (Integer) selectOne("board.countBoardList");
+	}
+
 
 
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import board.prj.common.common.CommandMap;
 import board.prj.dao.BoardDAO;
+import board.prj.page.Criteria;
  
 
 @Service("boardService")
@@ -55,6 +56,17 @@ public class BoardServiceImpl implements BoardService {
    public void deleteBoard(Map<String, Object> map) {
        // TODO Auto-generated method stub
        boardDAO.deleteBoard(map);
+   }
+
+   
+   @Override
+   public List<Map<String, Object>> selectBoardList(Criteria cri) {
+       return boardDAO.selectBoardList(cri);
+   }
+
+   @Override
+   public int countBoardListTotal() {
+       return boardDAO.countBoardList();
    }
 
 

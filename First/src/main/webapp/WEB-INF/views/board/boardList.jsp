@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -20,7 +21,8 @@
 <body>
 	<div id="content">
 		<div class="container">
-		<h1> 게시판</h1><br>
+			<h1>게시판</h1>
+			<br>
 			<table class="table">
 				<tbody>
 					<tr>
@@ -54,6 +56,25 @@
 			</table>
 
 		</div>
+		<ul class="btn-group pagination">
+			<c:if test="${pageMaker.prev }">
+				<li><a
+					href='<c:url value="/board/boardList?page=${pageMaker.startPage-1 }"/>'><i
+						class="fa fa-chevron-left"></i></a></li>
+			</c:if>
+			<c:forEach begin="${pageMaker.startPage }"
+				end="${pageMaker.endPage }" var="idx">
+				<li><a href='<c:url value="/board/boardList?page=${idx }"/>'><i
+						class="fa">${idx }</i></a></li>
+			</c:forEach>
+			<c:if test="${pageMaker.next && pageMaker.endPage >0 }">
+				<li><a
+					href='<c:url value="/board/boardList?page=${pageMaker.endPage+1 }"/>'><i
+						class="fa fa-chevron-right"></i></a></li>
+			</c:if>
+		</ul>
+
+
 
 		<a href='<c:url value='/board/boardWrite'/>' role="button"
 			class="btn btn-outline-info">글쓰기</a> <a

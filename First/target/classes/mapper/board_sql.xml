@@ -17,13 +17,27 @@
                     DATE_FORMAT(CREA_DATE, '%H:%i')
                 ) as CREA_DATE
             FROM
-
                 one_BOARD
             WHERE
                 DEL_CHK = 'N'
             ORDER BY IDX DESC
+            LIMIT #{pageStart}, #{perPageNum}
+
         ]]>
 	</select>
+	
+	<select id="countBoardList" resultType="Integer">
+    <![CDATA[
+        SELECT
+            count(*)
+        FROM
+            one_BOARD
+        WHERE
+            DEL_CHK='N'
+    ]]>
+</select>
+
+
 
 	<insert id="insertBoard" parameterType="hashmap">
         <![CDATA[

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import board.prj.common.common.CommandMap;
+import board.prj.page.Criteria;
+import board.prj.page.PageMaker;
 import board.prj.service.BoardService;
 
 @Controller
@@ -23,13 +25,22 @@ public class BoardController {
 	private BoardService boardServcie;
 
 	@RequestMapping(value = "/board/boardList")
-	public ModelAndView openBoardList(CommandMap commandMap) throws Exception {
+	public ModelAndView openBoardList(Criteria cri) throws Exception {
 
 		ModelAndView mav = new ModelAndView("board/boardList");
+		
+		PageMaker pageMaker = new PageMaker();
+	    pageMaker.setCri(cri);
+	    pageMaker.setTotalCount(boardServcie.countBoardListTotal());
 
-		List<Map<String, Object>> list = boardServcie.selectBoardList(commandMap);
+
+
+		List<Map<String, Object>> list = boardServcie.selectBoardList(cri);
 		mav.addObject("list", list);
+		
+		 mav.addObject("pageMaker", pageMaker);
 
+		
 		return mav;
 	}
 	
